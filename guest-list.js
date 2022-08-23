@@ -20,6 +20,12 @@ button.addEventListener('click', (e) => {
       const reversedArray = guests.reverse();
       guests = reversedArray;
       break;
+    case "splice": 
+      guests.splice (2, 2, (input.value));
+      break;
+    case "addtoCP":
+      guests.splice (3, 1, (input.value));
+      break;
     }
   window.localStorage.setItem('guests', JSON.stringify(guests));
   updateGuests();

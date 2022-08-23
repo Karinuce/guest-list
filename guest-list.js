@@ -25,6 +25,13 @@ button.addEventListener('click', (e) => {
   updateGuests();
 })});
 
+  window.addEventListener('load', () => {
+  if (window.localStorage.getItem('guests')) {
+  const guestsData = JSON.parse(window.localStorage.getItem('guests'));
+  guests = guestsData;
+  updateGuests();
+}});
+
 function updateGuests() {
   if (document.querySelector('body > main > div.guestsss > ol')) {
   document.querySelector('body > main > div.guestsss > ol').remove();
@@ -37,10 +44,3 @@ function updateGuests() {
   });
   document.querySelector('.guestsss').appendChild(guestsOl);
 }
-
-  window.addEventListener('load', () => {
-  if (window.localStorage.getItem('guests')) {
-  const guestsData = JSON.parse(window.localStorage.getItem('guests'));
-  guests = guestsData;
-  updateGuests();
-}});

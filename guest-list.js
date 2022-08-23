@@ -21,26 +21,26 @@ button.addEventListener('click', (e) => {
       guests = reversedArray;
       break;
     }
-  window.localStorage.setItem('guests', JSON.stringify(guests);
+  window.localStorage.setItem('guests', JSON.stringify(guests));
   updateGuests();
 })});
 
 function updateGuests() {
-  if (document.querySelector("body > main > div.guestsss > ol")) {
-  document.querySelector("body > main > div.guestsss > ol").remove();
+  if (document.querySelector('body > main > div.guestsss > ol')) {
+  document.querySelector('body > main > div.guestsss > ol').remove();
   }
   const guestsOl = document.createElement("ol");
   guests.forEach((guest) => {
-  const singleGuest = document.createElement("li");
+  const oneGuest = document.createElement("li");
   oneGuest.textContent = guest;
-  guestsOl.appendChild(singleGuest);
+  guestsOl.appendChild(oneGuest);
   });
-  document.querySelector('.guestsss').appendChild(guestListOl);
+  document.querySelector('.guestsss').appendChild(guestsOl);
 }
 
-  window.addEventListener("load", () => {
+  window.addEventListener('load', () => {
   if (window.localStorage.getItem('guests')) {
-  const guestsData = JSON.parse(window.localStorage.getItem("guests"));
-  guestList = guestListData;
-  updateGuestList();
+  const guestsData = JSON.parse(window.localStorage.getItem('guests'));
+  guests = guestsData;
+  updateGuests();
 }});
